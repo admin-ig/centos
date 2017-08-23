@@ -1,5 +1,5 @@
 #!/bin/bash
-# чтобы запустить скрипт : "curl https://...адрес_скрипта.../имя_скрипта | sh"
+# чтобы запустить скрипт : "https://raw.githubusercontent.com/admin-ig/centos/master/basic_setup"
 ## Базовая настройка сервера
 
 sudo yum update -y 
@@ -16,8 +16,8 @@ sudo systemctl enable sshd
 # настройка ssh
 sudo sed -i '/^PermitRootLogin/d' /etc/ssh/sshd_config 		# Удалить сторку начинающуюся с "PermitRootLogin"
 sudo sed -i '/^#PermitRootLogin/d' /etc/ssh/sshd_config 	# Удалить сторку начинающуюся с "#PermitRootLogin"
-sudo sed -i '/^AllowUsers/d' /etc/ssh/sshd_config 		# Удалить сторку начинающуюся с "AllowUsers"
-sudo sed -i '1 i PermitRootLogin no' /etc/ssh/sshd_config 	# Дописать первой строкой "PermitRootLogin no"
+sudo sed -i '/^AllowUsers/d' /etc/ssh/sshd_config 		    # Удалить сторку начинающуюся с "AllowUsers"
+sudo sed -i '1 i PermitRootLogin no' /etc/ssh/sshd_config # Дописать первой строкой "PermitRootLogin no"
 sudo sed -i "1 i AllowUsers $USER" /etc/ssh/sshd_config 	# Дописать первой строкой "AllowUsers $USER" ($USER - перемення окружения с именем текущего пользователя)
 sudo systemctl restart sshd
 
