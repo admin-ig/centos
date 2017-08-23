@@ -3,7 +3,7 @@
 ## Базовая настройка сервера
 
 sudo yum update -y 
-# sudo yum install -y open-vm-tools
+sudo yum install -y open-vm-tools
 sudo yum install -y net-tools bind-utils nano bash-completion wget mc
 
 # установить ntp клиент
@@ -69,3 +69,5 @@ sudo systemctl restart iptables.service
 
 # SELINUX
 sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+
+sudo reboot
