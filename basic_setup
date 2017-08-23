@@ -1,5 +1,5 @@
 #!/bin/bash
-# чтобы запустить скрипт : "https://raw.githubusercontent.com/admin-ig/centos/master/basic_setup"
+# чтобы запустить скрипт : "curl https://raw.githubusercontent.com/admin-ig/centos/master/basic_setup | sh"
 ## Базовая настройка сервера
 
 sudo yum update -y 
